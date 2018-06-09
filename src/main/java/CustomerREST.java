@@ -1,13 +1,14 @@
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class CustomerREST {
 
-    public String createCustomer(String stadt, String straße, String plz, String tel){
-        String json = null;
+    public String create(String inputJSON, String object){
+        String json = "";
         try{
-            URL url = new URL(Connection.urlstart + String.format("customer/create?stadt=%s&strasse=%s&plz=%s&tel=%s", stadt, straße, plz, tel));
-            System.out.println(url);
-            json = Connection.sendHTTPRequest(url, "GET");
+            URL url = new URL(Connection.urlstart + String.format(object));
+        //    System.out.println(url);
+            json = Connection.makePOST(inputJSON,url);
         }catch(Exception ex){
             System.out.println(ex.toString());
         }
@@ -19,48 +20,29 @@ public class CustomerREST {
         try{
             URL url = new URL(Connection.urlstart + String.format("customer/get/%s", id));
             json = Connection.sendHTTPRequest(url, "GET");
-            System.out.println(url);
+        //    System.out.println(url);
         }catch(Exception ex){
             System.out.println(ex.toString());
         }
         return json;
     }
 
-    public void deleteCustomer(String id){
+
+    public void updateCustomer(int id, String json) throws MalformedURLException {
         try{
-            URL url = new URL(Connection.urlstart + String.format("customer/delete?id=%s", id));
-            Connection.sendHTTPRequest(url, "GET");
-            System.out.println("Deleted successfully");
+            URL url = new URL(Connection.urlstart + "customer/"+ id );
+            Connection.makeUpdate(json, url);
         }catch(Exception ex){
             System.out.println(ex.toString());
         }
     }
-
-    public void updateCustomer(int id, String stadt, String straße, String plz, String tel){
-        String updateString = "";
+    public void deleteCustomer(int id) throws MalformedURLException {
         try{
-            if (stadt != null){
-                updateString += "&stadt="+stadt;
-            }
-            if (straße != null){
-                updateString += "&strasse="+straße;
-            }
-            if (plz != null){
-                updateString += "&plz"+plz;
-            }
-            if (tel != null){
-                updateString += "&tel="+tel;
-            }
-
-            URL url = new URL(Connection.urlstart + "customer/update?id="+id +  updateString);
-            Connection.sendHTTPRequest(url, "GET");
+            URL url = new URL(Connection.urlstart + "customer/"+ id );
+            Connection.sendHTTPRequest(url, "DELETE");
         }catch(Exception ex){
             System.out.println(ex.toString());
         }
-    }
-
-    public String getName(){
-        return getClass().getName();
     }
 
 

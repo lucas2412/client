@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IGT-Client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IGT_Client_jar</output-path>
+    <root id="archive" name="IGT-Client.jar">
+      <element id="module-output" name="IGT-Client" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20180130/json-20180130.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

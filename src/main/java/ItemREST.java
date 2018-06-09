@@ -1,11 +1,11 @@
 import java.net.URL;
 
 public class ItemREST {
-
+/*
     public void createItem(String name, Double preis ){
         try{
             URL url = new URL(Connection.urlstart + String.format("item/create?name=%s&preis=%s", name, preis));
-            System.out.println(url);
+      //      System.out.println(url);
             Connection.sendHTTPRequest(url, "GET");
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -15,7 +15,7 @@ public class ItemREST {
     public void getItem(String id){
         try{
             URL url = new URL(Connection.urlstart + String.format("item/get/%s", id));
-            Connection.sendHTTPRequest(url, "GET");
+        //    Connection.sendHTTPRequest(url, "GET");
             System.out.println(url);
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -25,7 +25,7 @@ public class ItemREST {
     public void deleteItem(String id){
         try{
             URL url = new URL(Connection.urlstart + String.format("item/delete?id=%s", id));
-            Connection.sendHTTPRequest(url, "GET");
+       //     Connection.sendHTTPRequest(url, "GET");
             System.out.println("Deleted successfully");
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -48,6 +48,8 @@ public class ItemREST {
             System.out.println(ex.toString());
         }
     }
+
+    */
     public String getAllItems() {
         String json = "";
         try{
@@ -57,9 +59,5 @@ public class ItemREST {
             System.out.println(ex.toString());
         }
     return json;
-    }
-
-    public String getName(){
-        return getClass().getName();
     }
 }
