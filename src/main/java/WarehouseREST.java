@@ -6,7 +6,7 @@ public class WarehouseREST {
         String json = null;
         try{
             URL url = new URL(Connection.urlstart + String.format("warehouse/getStock?wid=%s&iid=%s", wid, iid));
-     //       System.out.println(url);
+            System.out.println(url);
             json = Connection.sendHTTPRequest(url, "GET");
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -18,7 +18,7 @@ public class WarehouseREST {
 
         try{
             URL url = new URL(Connection.urlstart + String.format("warehouse/reduceStock"));
-       //     System.out.println(url);
+            System.out.println(url);
             Connection.makeUpdate(json,url);
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -29,7 +29,7 @@ public class WarehouseREST {
 
         try{
             URL url = new URL(Connection.urlstart + String.format("warehouse/addStock"));
-         //   System.out.println(url);
+            System.out.println(url);
             Connection.makeUpdate(json,url);
         }catch(Exception ex){
             System.out.println(ex.toString());

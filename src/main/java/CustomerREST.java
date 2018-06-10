@@ -7,7 +7,7 @@ public class CustomerREST {
         String json = "";
         try{
             URL url = new URL(Connection.urlstart + String.format(object));
-        //    System.out.println(url);
+            System.out.println(url);
             json = Connection.makePOST(inputJSON,url);
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -20,7 +20,7 @@ public class CustomerREST {
         try{
             URL url = new URL(Connection.urlstart + String.format("customer/get/%s", id));
             json = Connection.sendHTTPRequest(url, "GET");
-        //    System.out.println(url);
+            System.out.println(url);
         }catch(Exception ex){
             System.out.println(ex.toString());
         }

@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class Connection {
 
-    public final static String urlstart = "http://127.0.0.1:8080/";
+    public final static String urlstart = "http://192.168.254.212:8080/";
 
     public static String sendHTTPRequest(URL url, String method) {
         String resultJson = "";
@@ -27,7 +27,7 @@ public class Connection {
                     (conn.getInputStream())));
             String output;
             while ((output = br.readLine()) != null) {
-    //            System.out.println(output);
+                System.out.println(output);
                 resultJson+=output;
             }
         } catch (Exception e) {
@@ -61,9 +61,9 @@ public class Connection {
                     (conn.getInputStream())));
 
             String output;
-       //     System.out.println("Output from Server .... \n");
+            System.out.println("Output from Server .... \n");
             while ((output = br.readLine()) != null) {
-            //    System.out.println(output);
+                System.out.println(output);
                 resultJson+=output;
             }
 
@@ -104,9 +104,9 @@ public class Connection {
                     (conn.getInputStream())));
 
             String output;
-         //   System.out.println("Output from Server .... \n");
+            System.out.println("Output from Server .... \n");
             while ((output = br.readLine()) != null) {
-          //      System.out.println(output);
+                System.out.println(output);
             }
 
             conn.disconnect();
