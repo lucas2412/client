@@ -9,6 +9,7 @@ import java.net.URL;
 public class Connection {
 
     public final static String urlstart = "http://192.168.254.212:8080/";
+ //   public final static String urlstart = "http://127.0.0.1:8080/";
 
     public static String sendHTTPRequest(URL url, String method) {
         String resultJson = "";

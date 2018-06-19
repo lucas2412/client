@@ -8,12 +8,9 @@ public class main {
 
     public static void main(String[] args) throws MalformedURLException {
 
-        // startBPMNconsole();
-          startBPMNauto();
-     //   CustomerREST controller = new CustomerREST();
+          startBPMNconsole();
+        //  startBPMNauto();
 
-     //   controller.createCustomer("Mannheim", "asdasdads", "23822", "23912039", 2);
-      //  controller.get("22");
     }
 
 
